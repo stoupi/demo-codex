@@ -21,7 +21,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <Image src="/assets/logo.png" alt={t('logoAlt')} width={38} height={38} className="h-[38px] w-[38px] rounded-lg" />
           <div className="leading-tight">
-            <div className="text-sm font-medium text-[#0063AF]">{t('service')}</div>
+            <div className="text-sm font-medium tracking-[0.08em] text-[#0063AF]">{t('service')}</div>
             <div className="text-sm font-bold uppercase tracking-wide text-[#0063AF]">{t('hospital')}</div>
           </div>
         </Link>
