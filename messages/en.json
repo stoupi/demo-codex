@@ -22,7 +22,8 @@
     "heroTitle": "Welcome to our Cardiology Department",
     "heroSubtitle": "Lariboisière Hospital – Assistance Publique – Hôpitaux de Paris (AP-HP)",
     "primaryCta": "Book an appointment",
-    "secondaryCta": "Patient space"
+    "secondaryCta": "Patient space",
+    "chief": "Head of Department: Professor Patrick HENRY"
   },
   "auth": {
     "loginTitle": "Login",

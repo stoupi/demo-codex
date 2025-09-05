@@ -32,9 +32,12 @@ export async function Hero({ locale }: HeroProps) {
         <h1 className="max-w-5xl text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
           {t('heroTitle')}
         </h1>
-        <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl">
-          {t('heroSubtitle')}
-        </p>
+        <div className="flex flex-col items-center gap-1">
+          <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl">
+            {t('heroSubtitle')}
+          </p>
+          <p className="text-[#E6F0FA] sm:text-xl">{t('chief')}</p>
+        </div>
         <div className="flex flex-col items-center gap-5 sm:flex-row">
           <Link href="/appointments">
             <Button size="lg" className="rounded-[14px] bg-white px-8 text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]">

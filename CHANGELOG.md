@@ -17,8 +17,11 @@
  - Logo size increased to 38×38 with softer rounded corners (`rounded-lg`).
  - Increased letter-spacing on “Service de Cardiologie” to align visually with the uppercase hospital line.
  - Added a solid blue divider line between the two logo captions to match the design.
+ - Corrected FR hero subtitle wording to: "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)".
 - Donate button: added a heart icon that animates with a heartbeat on hover only.
- - Donate button icon now sourced from `public/assets/heart.svg` and animated on hover.
+- Donate button icon now sourced from `public/assets/heart.svg` and animated on hover.
+- Hero: added a line below subtitle — “Chef de service : Professeur Patrick HENRY” (localized).
+ - Hero spacing: grouped subtitle and chief lines with tighter spacing and same font size for visual cohesion.
 
 ## Asset: Hand-drawn Heart SVG
 

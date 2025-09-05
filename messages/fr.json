@@ -20,9 +20,10 @@
 	"home": {
 		"title": "",
 		"heroTitle": "Bienvenue dans notre service de Cardiologie",
-		"heroSubtitle": "Hôpital Lariboisière - Assistance Publique Hôpitaux de Paris (AP-HP)",
+		"heroSubtitle": "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)",
 		"primaryCta": "Prendre rendez-vous",
-		"secondaryCta": "Espace patients"
+		"secondaryCta": "Espace patients",
+		"chief": "Chef de service : Professeur Patrick HENRY"
 	},
 	"auth": {
 		"loginTitle": "Connexion",
