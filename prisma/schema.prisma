@@ -66,3 +66,12 @@ model Verification {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 }
+
+// Application configuration key/value storage
+model Setting {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  value     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

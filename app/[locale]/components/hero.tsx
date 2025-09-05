@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { getHeroImageUrl } from '@/lib/services/settings';
 import { Link } from '@/app/i18n/navigation';
 import { Button } from '@/components/ui/button';
 
@@ -8,9 +9,25 @@ type HeroProps = {
 
 export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations({ locale, namespace: 'home' });
+  let dbUrl: string | null = null;
+  try {
+    dbUrl = await getHeroImageUrl();
+  } catch {
+    dbUrl = null;
+  }
+  const imageUrl = dbUrl ?? process.env.NEXT_PUBLIC_HERO_IMAGE_URL ?? '/assets/nouveaularib.jpg';
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#2F6FB7] to-[#2A66A6]">
+    <section className="relative overflow-hidden">
+      {/* Background image layer */}
+      <div
+        className="absolute inset-0 -z-10 bg-center bg-cover"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+        aria-hidden
+      />
+      {/* Blue overlay to create the tinted transparency */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#2F6FB7]/70 to-[#2A66A6]/70" />
+
       <div className="relative container mx-auto flex flex-col items-center gap-8 px-4 py-28 text-center sm:py-36">
         <h1 className="max-w-5xl text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
           {t('heroTitle')}
