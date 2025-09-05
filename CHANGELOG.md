@@ -13,6 +13,18 @@
 - Navbar menu links updated to brand blue `#0063AF` and font size 16px (`text-base`).
 - Language button text updated to `#0063AF` and 16px.
  - Logo caption colors unified: service and hospital text now `#0063AF`; logo badge also `#0063AF`. Hover states for menu links match `#0063AF`.
-- Navbar logo now uses `public/assets/logo.png` via `next/image` with localized alt text.
-- Logo size increased to 38×38 with softer rounded corners (`rounded-lg`).
+ - Navbar logo now uses `public/assets/logo.png` via `next/image` with localized alt text.
+ - Logo size increased to 38×38 with softer rounded corners (`rounded-lg`).
  - Increased letter-spacing on “Service de Cardiologie” to align visually with the uppercase hospital line.
+ - Added a solid blue divider line between the two logo captions to match the design.
+- Donate button: added a heart icon that animates with a heartbeat on hover only.
+ - Donate button icon now sourced from `public/assets/heart.svg` and animated on hover.
+
+## Asset: Hand-drawn Heart SVG
+
+- Feature: Adds `public/assets/hand-drawn-heart.svg`, a human, hand-drawn style heart outline with subtle double-stroke for authenticity.
+- What it does: Provides a brand-friendly decorative icon that pairs well with healthcare visuals.
+- How to use:
+  - As an `<img>`/background: `/assets/hand-drawn-heart.svg` from the `public` folder.
+  - With Next.js: `<Image src="/assets/hand-drawn-heart.svg" alt="Heart" width={48} height={48} />`.
+  - As inline SVG: import the file content or copy into a component to change stroke color via `currentColor`.
