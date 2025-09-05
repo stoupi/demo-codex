@@ -8,3 +8,10 @@
   - Components: Update UI in `app/[locale]/components/navbar.tsx` and `app/[locale]/components/hero.tsx`.
   - Links: Use the i18n `Link` from `app/i18n/navigation` to preserve locale in URLs.
   - Background image: Default fallback is `public/assets/nouveaularib.jpg`. You can override via `NEXT_PUBLIC_HERO_IMAGE_URL` or DB setting `HERO_IMAGE_URL`.
+
+### Tweaks
+- Navbar menu links updated to brand blue `#0063AF` and font size 16px (`text-base`).
+- Language button text updated to `#0063AF` and 16px.
+ - Logo caption colors unified: service and hospital text now `#0063AF`; logo badge also `#0063AF`. Hover states for menu links match `#0063AF`.
+- Navbar logo now uses `public/assets/logo.png` via `next/image` with localized alt text.
+ - Logo size increased to 38×38 with softer rounded corners (`rounded-lg`).
