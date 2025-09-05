@@ -1,6 +1,13 @@
 {
 	"navigation": {
 		"home": "Accueil",
+		"patients": "Espace patients",
+		"care": "Offre de soins",
+		"team": "L'équipe",
+		"news": "Actualités",
+		"donate": "Faire un don",
+		"service": "Service de Cardiologie",
+		"hospital": "HÔPITAL LARIBOISIÈRE",
 		"profile": "Profil",
 		"login": "Connexion",
 		"logout": "Déconnexion",
@@ -10,7 +17,11 @@
 		"appName": "Nom de l'application"
 	},
 	"home": {
-		"title": "Bonjour le monde"
+		"title": "",
+		"heroTitle": "Bienvenue dans notre service de Cardiologie",
+		"heroSubtitle": "Hôpital Lariboisière - Assistance Publique Hôpitaux de Paris (AP-HP)",
+		"primaryCta": "Prendre rendez-vous",
+		"secondaryCta": "Espace patients"
 	},
 	"auth": {
 		"loginTitle": "Connexion",

@@ -1,6 +1,13 @@
 {
   "navigation": {
     "home": "Home",
+    "patients": "Patient space",
+    "care": "Care offering",
+    "team": "Our team",
+    "news": "News",
+    "donate": "Donate",
+    "service": "Cardiology Department",
+    "hospital": "LARIBOISIÈRE HOSPITAL",
     "profile": "Profile",
     "login": "Login",
     "logout": "Logout",
@@ -10,7 +17,11 @@
     "appName": "App Name"
   },
   "home": {
-    "title": "Hello World"
+    "title": "",
+    "heroTitle": "Welcome to our Cardiology Department",
+    "heroSubtitle": "Lariboisière Hospital – Assistance Publique – Hôpitaux de Paris (AP-HP)",
+    "primaryCta": "Book an appointment",
+    "secondaryCta": "Patient space"
   },
   "auth": {
     "loginTitle": "Login",

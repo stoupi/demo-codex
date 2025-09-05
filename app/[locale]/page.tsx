@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { Hero } from './components/hero';
 
 export default async function Home({
   params
@@ -6,11 +6,8 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'home' });
   
   return (
-    <div>
-      <h1>{t('title')}</h1>
-    </div>
+    <Hero locale={locale} />
   );
 }
