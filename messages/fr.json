@@ -23,7 +23,8 @@
 		"heroSubtitle": "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)",
 		"primaryCta": "Prendre rendez-vous",
 		"secondaryCta": "Espace patients",
-		"chief": "Chef de service : Professeur Patrick HENRY"
+		"chief": "Chef de service : Professeur Patrick HENRY",
+		"teamImageAlt": "Photo de l'équipe"
 	},
 	"auth": {
 		"loginTitle": "Connexion",

@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { getHeroImageUrl } from '@/lib/services/settings';
+import { getSetting } from '@/lib/services/settings';
+import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 import { Button } from '@/components/ui/button';
 
@@ -16,6 +18,13 @@ export async function Hero({ locale }: HeroProps) {
     dbUrl = null;
   }
   const imageUrl = dbUrl ?? process.env.NEXT_PUBLIC_HERO_IMAGE_URL ?? '/assets/nouveaularib.jpg';
+  let teamUrl: string | null = null;
+  try {
+    teamUrl = await getSetting('HERO_TEAM_IMAGE_URL');
+  } catch {
+    teamUrl = null;
+  }
+  const teamImageUrl = teamUrl ?? process.env.NEXT_PUBLIC_HERO_TEAM_IMAGE_URL ?? '/assets/team.png';
 
   return (
     <section className="relative overflow-hidden">
@@ -29,9 +38,20 @@ export async function Hero({ locale }: HeroProps) {
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#2F6FB7]/70 to-[#2A66A6]/70" />
 
       <div className="relative container mx-auto flex flex-col items-center gap-8 px-4 py-28 text-center sm:py-36">
-        <h1 className="max-w-5xl text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
-          {t('heroTitle')}
-        </h1>
+        <div className="flex w-full max-w-6xl items-center justify-center gap-6 sm:gap-8">
+          <h1 className="flex-1 text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
+            {t('heroTitle')}
+          </h1>
+          <div className="hidden md:block">
+            <Image
+              src={teamImageUrl}
+              alt={t('teamImageAlt')}
+              width={220}
+              height={220}
+              className="h-[220px] w-[220px] rounded-lg object-cover shadow-sm"
+            />
+          </div>
+        </div>
         <div className="flex flex-col items-center gap-1">
           <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl">
             {t('heroSubtitle')}

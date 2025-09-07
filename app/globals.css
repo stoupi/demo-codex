@@ -131,4 +131,21 @@
     100% { transform: scale(1); }
   }
   .animate-heartbeat { animation: heartbeat 1s ease-in-out infinite; }
+
+  /* Navbar link underline reveal */
+  .nav-anim { position: relative; }
+  .nav-anim::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: #0063AF;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .25s ease;
+  }
+  .nav-anim:hover::after,
+  .nav-anim:focus-visible::after { transform: scaleX(1); }
 }

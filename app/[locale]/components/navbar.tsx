@@ -28,10 +28,10 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-base">
-          <Link href="/patients" className="text-[#0063AF] hover:text-[#0063AF]">{t('patients')}</Link>
-          <Link href="/services" className="text-[#0063AF] hover:text-[#0063AF]">{t('care')}</Link>
-          <Link href="/team" className="text-[#0063AF] hover:text-[#0063AF]">{t('team')}</Link>
-          <Link href="/news" className="text-[#0063AF] hover:text-[#0063AF]">{t('news')}</Link>
+          <Link href="/patients" className="nav-anim text-[#0063AF] hover:text-[#0063AF]">{t('patients')}</Link>
+          <Link href="/services" className="nav-anim text-[#0063AF] hover:text-[#0063AF]">{t('care')}</Link>
+          <Link href="/team" className="nav-anim text-[#0063AF] hover:text-[#0063AF]">{t('team')}</Link>
+          <Link href="/news" className="nav-anim text-[#0063AF] hover:text-[#0063AF]">{t('news')}</Link>
         </div>
 
         <div className="flex items-center gap-4">

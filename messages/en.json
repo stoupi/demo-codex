@@ -23,7 +23,8 @@
     "heroSubtitle": "Lariboisière Hospital – Assistance Publique – Hôpitaux de Paris (AP-HP)",
     "primaryCta": "Book an appointment",
     "secondaryCta": "Patient space",
-    "chief": "Head of Department: Professor Patrick HENRY"
+    "chief": "Head of Department: Professor Patrick HENRY",
+    "teamImageAlt": "Team photo"
   },
   "auth": {
     "loginTitle": "Login",

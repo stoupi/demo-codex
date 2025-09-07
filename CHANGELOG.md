@@ -21,7 +21,9 @@
 - Donate button: added a heart icon that animates with a heartbeat on hover only.
 - Donate button icon now sourced from `public/assets/heart.svg` and animated on hover.
 - Hero: added a line below subtitle — “Chef de service : Professeur Patrick HENRY” (localized).
- - Hero spacing: grouped subtitle and chief lines with tighter spacing and same font size for visual cohesion.
+- Hero spacing: grouped subtitle and chief lines with tighter spacing and same font size for visual cohesion.
+- Navbar links: added a subtle underline reveal animation on hover/focus matching `#0063AF`.
+ - Hero: added a team image to the right of the title on desktop (`/assets/team.png` by default, overridable via `HERO_TEAM_IMAGE_URL` setting or `NEXT_PUBLIC_HERO_TEAM_IMAGE_URL`).
 
 ## Asset: Hand-drawn Heart SVG
 
