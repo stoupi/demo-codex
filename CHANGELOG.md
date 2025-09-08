@@ -31,7 +31,9 @@
   - Secondary becomes “Venir à Lariboisière” (EN: “Getting to Lariboisière”).
   - Added third CTA “Nous contacter” (EN: “Contact us”).
   - All three CTAs re-styled to be taller than wide, with larger text, and the calendar icon scaled up 2x.
-  - Icons: masked SVGs from `public/assets/icons` (50×50) now use brand blue `#1F6DB2` as fill; stroke width increased for visibility.
+  - Icons: masked SVGs from `public/assets/icons` (50×50) now use brand blue `#1F6DB2` as fill; stroke widths normalized to 1.5px for calendar, map, and phone (with cache-busting on calendar `?v=3`).
+  - Secondary CTA styling: background set to `#FFDF6F` with blue text/icons for contrast.
+  - Tertiary CTA styling: background set to brand blue `#1F6DB2` with white text/icon (hover `#155A98`).
 
 ## Asset: Hand-drawn Heart SVG
 

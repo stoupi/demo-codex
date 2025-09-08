@@ -59,8 +59,8 @@ export async function Hero({ locale }: HeroProps) {
                   <span
                     className="mb-2 inline-block h-[50px] w-[50px] bg-[#1F6DB2]"
                     style={{
-                      WebkitMaskImage: "url('/assets/icons/calendar-clock.svg')",
-                      maskImage: "url('/assets/icons/calendar-clock.svg')",
+                      WebkitMaskImage: "url('/assets/icons/calendar-clock.svg?v=3')",
+                      maskImage: "url('/assets/icons/calendar-clock.svg?v=3')",
                       WebkitMaskRepeat: 'no-repeat',
                       maskRepeat: 'no-repeat',
                       WebkitMaskPosition: 'center',
@@ -81,8 +81,7 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/access">
               <Button
                 size="lg"
-                variant="outline"
-                className="h-40 w-32 rounded-[14px] border-2 border-white bg-transparent p-4 text-lg font-medium text-white hover:bg-white/10"
+                className="h-40 w-32 rounded-[14px] bg-[#FFDF6F] p-4 text-lg font-medium text-[#1F6DB2] shadow-sm hover:brightness-95"
               >
                 <span className="flex flex-col items-center text-center">
                   <span
@@ -107,12 +106,11 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/contact">
               <Button
                 size="lg"
-                variant="outline"
-                className="h-40 w-32 rounded-[14px] border-2 border-white bg-transparent p-4 text-lg font-medium text-white hover:bg-white/10"
+                className="h-40 w-32 rounded-[14px] bg-[#1F6DB2] p-4 text-lg font-medium text-white shadow-sm hover:bg-[#155A98]"
               >
                 <span className="flex flex-col items-center text-center">
                   <span
-                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#1F6DB2]"
+                    className="mb-2 inline-block h-[50px] w-[50px] bg-white"
                     style={{
                       WebkitMaskImage: "url('/assets/icons/phone.svg')",
                       maskImage: "url('/assets/icons/phone.svg')",
