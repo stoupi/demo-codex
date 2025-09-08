@@ -1,7 +1,11 @@
 {
 	"navigation": {
 		"home": "Accueil",
-		"patients": "Espace patients",
+		"patients": "Informations pratiques",
+		"emergencies": "Urgences",
+		"bookOnline": "Prendre rendez-vous",
+		"gettingHere": "Venir à Lariboisière",
+		"contact": "Nous contacter",
 		"care": "Offre de soins",
 		"team": "L'équipe",
 		"news": "Actualités",

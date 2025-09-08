@@ -14,7 +14,7 @@
 - Language button text updated to `#0063AF` and 16px.
  - Logo caption colors unified: service and hospital text now `#0063AF`; logo badge also `#0063AF`. Hover states for menu links match `#0063AF`.
  - Navbar logo now uses `public/assets/logo.png` via `next/image` with localized alt text.
- - Logo size increased to 38×38 with softer rounded corners (`rounded-lg`).
+ - Logo size increased to 44×44 with softer rounded corners (`rounded-lg`) to better match the text block height.
  - Increased letter-spacing on “Service de Cardiologie” to align visually with the uppercase hospital line.
  - Added a solid blue divider line between the two logo captions to match the design.
  - Corrected FR hero subtitle wording to: "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)".
@@ -24,6 +24,10 @@
 - Hero: added a line below subtitle — “Chef de service : Professeur Patrick HENRY” (localized).
 - Hero spacing: grouped subtitle and chief lines with tighter spacing and same font size for visual cohesion.
 - Navbar links: added a subtle underline reveal animation on hover/focus matching `#0063AF`.
+- Navbar typography: increased font sizes for logo captions, menu links, language toggle, and “Faire un don” button; navbar remains sticky at top.
+ - Navbar height increased (`h-20`) and Lottie heart removed from the donate button (replaced with a static heart icon).
+- Renamed navbar link: “Espace patients” → “Informations pratiques” (EN: “Practical information”).
+ - Added dropdown submenu under “Informations pratiques” with: “Urgences”, “Prendre rendez-vous”, “Venir à Lariboisière”, “Nous contacter”.
 - Hero: added a team image to the right of the title on desktop (`/assets/equipe.jpeg` by default, overridable via `HERO_TEAM_IMAGE_URL` setting or `NEXT_PUBLIC_HERO_TEAM_IMAGE_URL`).
 - Hero layout: shifted content block to the left (keeps centered alignment within its column) and enlarged the team photo while preserving the original aspect ratio.
 - Hero CTAs: updated labels and layout
@@ -33,7 +37,7 @@
   - All three CTAs re-styled to be taller than wide, with larger text, and the calendar icon scaled up 2x.
   - Icons: masked SVGs from `public/assets/icons` (50×50) now use brand blue `#1F6DB2` as fill; stroke widths normalized to 1.5px for calendar, map, and phone (with cache-busting on calendar `?v=3`).
   - Secondary CTA styling: background set to `#FFDF6F` with blue text/icons for contrast.
-  - Tertiary CTA styling: background set to brand blue `#1F6DB2` with white text/icon (hover `#155A98`).
+  - Tertiary CTA styling: background set to deep blue `#0F2C6B` with white text/icon (hover `#0D255B`).
 
 ## Asset: Hand-drawn Heart SVG
 

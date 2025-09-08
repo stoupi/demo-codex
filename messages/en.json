@@ -1,7 +1,11 @@
 {
   "navigation": {
     "home": "Home",
-    "patients": "Patient space",
+    "patients": "Practical information",
+    "emergencies": "Emergency",
+    "bookOnline": "Book an appointment",
+    "gettingHere": "Getting to Lariboisière",
+    "contact": "Contact us",
     "care": "Care offering",
     "team": "Our team",
     "news": "News",

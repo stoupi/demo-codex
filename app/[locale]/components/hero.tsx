@@ -53,7 +53,7 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/appointments">
               <Button
                 size="lg"
-                className="h-40 w-32 rounded-[14px] bg-white p-4 text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]"
+                className="h-40 w-32 rounded-[14px] bg-white p-4 text-base text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]"
               >
                 <span className="flex flex-col items-center leading-tight text-lg font-medium text-center">
                   <span
@@ -81,7 +81,7 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/access">
               <Button
                 size="lg"
-                className="h-40 w-32 rounded-[14px] bg-[#FFDF6F] p-4 text-lg font-medium text-[#1F6DB2] shadow-sm hover:brightness-95"
+                className="h-40 w-32 rounded-[14px] bg-[#FFDF6F] p-4 text-base font-medium text-[#1F6DB2] shadow-sm hover:brightness-95"
               >
                 <span className="flex flex-col items-center text-center">
                   <span
@@ -106,11 +106,11 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="h-40 w-32 rounded-[14px] bg-[#1F6DB2] p-4 text-lg font-medium text-white shadow-sm hover:bg-[#155A98]"
+                className="h-40 w-32 rounded-[14px] bg-[#0F2C6B] p-4 text-base font-medium text-white shadow-sm hover:bg-[#0D255B]"
               >
                 <span className="flex flex-col items-center text-center">
                   <span
-                    className="mb-2 inline-block h-[50px] w-[50px] bg-white"
+                    className="mb-2 inline-block h-[45px] w-[45px] bg-white"
                     style={{
                       WebkitMaskImage: "url('/assets/icons/phone.svg')",
                       maskImage: "url('/assets/icons/phone.svg')",
