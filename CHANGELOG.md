@@ -23,18 +23,22 @@
  - Donate button: replaced static SVG with Lottie animation loader component using `/assets/heart.json` (plays on hover). Requires `lottie-web` to be installed to animate; otherwise falls back gracefully.
 - Hero: added a line below subtitle — “Chef de service : Professeur Patrick HENRY” (localized).
 - Hero spacing: grouped subtitle and chief lines with tighter spacing and same font size for visual cohesion.
-- Navbar links: added a subtle underline reveal animation on hover/focus matching `#0063AF`.
+ - Hero text: subtitle and chief name set to semi-bold (`font-semibold`).
+- Navbar links: removed underline reveal animation on hover as requested.
 - Navbar typography: increased font sizes for logo captions, menu links, language toggle, and “Faire un don” button; navbar remains sticky at top.
  - Navbar height increased (`h-20`) and Lottie heart removed from the donate button (replaced with a static heart icon).
 - Renamed navbar link: “Espace patients” → “Informations pratiques” (EN: “Practical information”).
- - Added dropdown submenu under “Informations pratiques” with: “Urgences”, “Prendre rendez-vous”, “Venir à Lariboisière”, “Nous contacter”.
+- Added dropdown submenu under “Informations pratiques” with: “Urgences”, “Prendre rendez-vous”, “Venir à Lariboisière”, “Nous contacter”.
+- Dropdown UX: submenu opens on hover, aligns to the left edge of the parent label, and uses a larger font size to match the main menu style.
+ - New navbar item: “Recherche” inserted between “Offre de soins” and “L'équipe”, with submenu items — Plateforme MIRACL.ai, Etude ADDICTO-USIC, Etude ANDAMAN, Etude EACVI-MMVD.
+ - Submenu hover: items turn white text on deep blue `#0F2C6B` background for clear highlight.
 - Hero: added a team image to the right of the title on desktop (`/assets/equipe.jpeg` by default, overridable via `HERO_TEAM_IMAGE_URL` setting or `NEXT_PUBLIC_HERO_TEAM_IMAGE_URL`).
 - Hero layout: shifted content block to the left (keeps centered alignment within its column) and enlarged the team photo while preserving the original aspect ratio.
 - Hero CTAs: updated labels and layout
   - Primary now “Prendre rendez-vous en ligne” with a calendar icon above the text (EN: “Book an appointment online”).
   - Secondary becomes “Venir à Lariboisière” (EN: “Getting to Lariboisière”).
   - Added third CTA “Nous contacter” (EN: “Contact us”).
-  - All three CTAs re-styled to be taller than wide, with larger text, and the calendar icon scaled up 2x.
+  - All three CTAs re-styled to be taller than wide, with larger text, and the calendar icon scaled up 2x. Primary CTA text slightly reduced to match secondary’s visual size. On hover, all CTA backgrounds turn pink `#F05A7A` and text/icons turn white, with smooth transitions. Base color for the first two CTAs set to deep blue `#0F2C6B` (text and icons). Cursor changes to pointer on hover to emphasize clickability.
   - Icons: masked SVGs from `public/assets/icons` (50×50) now use brand blue `#1F6DB2` as fill; stroke widths normalized to 1.5px for calendar, map, and phone (with cache-busting on calendar `?v=3`).
   - Secondary CTA styling: background set to `#FFDF6F` with blue text/icons for contrast.
   - Tertiary CTA styling: background set to deep blue `#0F2C6B` with white text/icon (hover `#0D255B`).

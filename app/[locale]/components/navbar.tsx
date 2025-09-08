@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Image from 'next/image';
+import { ChevronDownIcon } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useState } from 'react';
 
@@ -23,6 +24,8 @@ export function Navbar() {
   };
 
   const [infoOpen, setInfoOpen] = useState(false);
+  const [researchOpen, setResearchOpen] = useState(false);
+  const [teamOpen, setTeamOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white">
@@ -39,33 +42,108 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-10 text-lg">
           <DropdownMenu open={infoOpen} onOpenChange={setInfoOpen}>
             <DropdownMenuTrigger
-              className="nav-anim text-[#0063AF] hover:text-[#0063AF] outline-none"
+              className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
               onMouseEnter={() => setInfoOpen(true)}
             >
-              {t('patients')}
+              <span className="inline-flex items-center gap-1">
+                {t('patients')}
+                <ChevronDownIcon className="h-4 w-4" aria-hidden="true" />
+              </span>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-              className="min-w-[16rem] text-[#0063AF]"
+              align="start"
+              sideOffset={8}
+              className="min-w-[18rem] text-[#0063AF]"
               onMouseEnter={() => setInfoOpen(true)}
               onMouseLeave={() => setInfoOpen(false)}
             >
-              <DropdownMenuItem asChild>
-                <Link href="/emergencies" className="w-full text-[#0063AF] hover:text-[#0063AF]">{t('emergencies')}</Link>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/emergencies" className="w-full">{t('emergencies')}</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/appointments" className="w-full text-[#0063AF] hover:text-[#0063AF]">{t('bookOnline')}</Link>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/appointments" className="w-full">{t('bookOnline')}</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/access" className="w-full text-[#0063AF] hover:text-[#0063AF]">{t('gettingHere')}</Link>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/access" className="w-full">{t('gettingHere')}</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/contact" className="w-full text-[#0063AF] hover:text-[#0063AF]">{t('contact')}</Link>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/faq" className="w-full">{t('faq')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/contact" className="w-full">{t('contact')}</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link href="/services" className="nav-anim text-[#0063AF] hover:text-[#0063AF]">{t('care')}</Link>
-          <Link href="/team" className="nav-anim text-[#0063AF] hover:text-[#0063AF]">{t('team')}</Link>
-          <Link href="/news" className="nav-anim text-[#0063AF] hover:text-[#0063AF]">{t('news')}</Link>
+          <Link href="/services" className="text-[#0063AF] hover:text-[#0063AF] font-medium">{t('care')}</Link>
+          <DropdownMenu open={researchOpen} onOpenChange={setResearchOpen}>
+            <DropdownMenuTrigger
+              className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
+              onMouseEnter={() => setResearchOpen(true)}
+            >
+              <span className="inline-flex items-center gap-1">
+                {t('research')}
+                <ChevronDownIcon className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="start"
+              sideOffset={8}
+              className="min-w-[20rem] text-[#0063AF]"
+              onMouseEnter={() => setResearchOpen(true)}
+              onMouseLeave={() => setResearchOpen(false)}
+            >
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/research/miracl-ai" className="w-full">{t('miracl')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/research/addicto-usic" className="w-full">{t('addicto')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/research/andaman" className="w-full">{t('andaman')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/research/eacvi-mmvd" className="w-full">{t('eacvi')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/research/publications" className="w-full">{t('publications')}</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu open={teamOpen} onOpenChange={setTeamOpen}>
+            <DropdownMenuTrigger
+              className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
+              onMouseEnter={() => setTeamOpen(true)}
+            >
+              <span className="inline-flex items-center gap-1">
+                {t('team')}
+                <ChevronDownIcon className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="start"
+              sideOffset={8}
+              className="min-w-[20rem] text-[#0063AF]"
+              onMouseEnter={() => setTeamOpen(true)}
+              onMouseLeave={() => setTeamOpen(false)}
+            >
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/team#medical" className="w-full">{t('teamMedical')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/team#paramedical" className="w-full">{t('teamParamedical')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/team#research" className="w-full">{t('teamResearch')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/team#administrative" className="w-full">{t('teamAdministrative')}</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
+                <Link href="/team#gallery" className="w-full">{t('teamGallery')}</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link href="/news" className="text-[#0063AF] hover:text-[#0063AF] font-medium">{t('news')}</Link>
         </div>
 
         <div className="flex items-center gap-4">

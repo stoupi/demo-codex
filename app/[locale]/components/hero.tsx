@@ -44,20 +44,20 @@ export async function Hero({ locale }: HeroProps) {
             {t('heroTitle')}
           </h1>
           <div className="flex flex-col items-center gap-1">
-            <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl">
+            <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl font-semibold">
               {t('heroSubtitle')}
             </p>
-            <p className="text-[#E6F0FA] sm:text-xl">{t('chief')}</p>
+            <p className="text-[#E6F0FA] sm:text-xl font-semibold">{t('chief')}</p>
           </div>
           <div className="flex flex-col items-center gap-5 sm:flex-row">
             <Link href="/appointments">
               <Button
                 size="lg"
-                className="h-40 w-32 rounded-[14px] bg-white p-4 text-base text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]"
+                className="group h-40 w-36 cursor-pointer rounded-[14px] bg-white p-4 text-base text-[#0F2C6B] shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
               >
-                <span className="flex flex-col items-center leading-tight text-lg font-medium text-center">
+                <span className="flex flex-col items-center leading-tight text-base font-medium text-center">
                   <span
-                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#1F6DB2]"
+                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#0F2C6B] group-hover:bg-white transition-colors duration-200 ease-out"
                     style={{
                       WebkitMaskImage: "url('/assets/icons/calendar-clock.svg?v=3')",
                       maskImage: "url('/assets/icons/calendar-clock.svg?v=3')",
@@ -81,11 +81,11 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/access">
               <Button
                 size="lg"
-                className="h-40 w-32 rounded-[14px] bg-[#FFDF6F] p-4 text-base font-medium text-[#1F6DB2] shadow-sm hover:brightness-95"
+                className="group h-40 w-36 cursor-pointer rounded-[14px] bg-[#FFDF6F] p-4 text-base font-medium text-[#0F2C6B] shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
               >
                 <span className="flex flex-col items-center text-center">
                   <span
-                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#1F6DB2]"
+                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#0F2C6B] group-hover:bg-white transition-colors duration-200 ease-out"
                     style={{
                       WebkitMaskImage: "url('/assets/icons/map-pinned.svg')",
                       maskImage: "url('/assets/icons/map-pinned.svg')",
@@ -106,7 +106,7 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="h-40 w-32 rounded-[14px] bg-[#0F2C6B] p-4 text-base font-medium text-white shadow-sm hover:bg-[#0D255B]"
+                className="group h-40 w-36 cursor-pointer rounded-[14px] bg-[#0F2C6B] p-4 text-base font-medium text-white shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
               >
                 <span className="flex flex-col items-center text-center">
                   <span

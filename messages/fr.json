@@ -4,10 +4,22 @@
 		"patients": "Informations pratiques",
 		"emergencies": "Urgences",
 		"bookOnline": "Prendre rendez-vous",
-		"gettingHere": "Venir à Lariboisière",
+		"gettingHere": "Plan d'accès",
 		"contact": "Nous contacter",
+		"faq": "Questions fréquentes",
+		"research": "Recherche",
+		"miracl": "Plateforme MIRACL.ai",
+		"addicto": "Etude ADDICTO-USIC",
+		"andaman": "Etude ANDAMAN",
+		"eacvi": "Etude EACVI-MMVD",
+		"publications": "Nos publications",
 		"care": "Offre de soins",
 		"team": "L'équipe",
+		"teamMedical": "Equipe médicale",
+		"teamParamedical": "Equipe paramédicale",
+		"teamResearch": "Equipe recherche",
+		"teamAdministrative": "Equipe administrative",
+		"teamGallery": "Galerie photos",
 		"news": "Actualités",
 		"donate": "Faire un don",
 		"service": "Service de Cardiologie",
@@ -81,6 +93,13 @@
 	"profile": {
 		"title": "Profil",
 		"welcome": "Bienvenue sur votre profil"
+	},
+	"teamPage": {
+		"medicalTitle": "Equipe médicale",
+		"paramedicalTitle": "Equipe paramédicale",
+		"researchTitle": "Equipe recherche",
+		"administrativeTitle": "Equipe administrative",
+		"galleryTitle": "Galerie photos"
 	},
 	"metadata": {
 		"title": "FeedbackApp",
