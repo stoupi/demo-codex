@@ -95,11 +95,36 @@
     "welcome": "Welcome to your profile"
   },
   "teamPage": {
+    "title": "Our team",
+    "back": "Back",
     "medicalTitle": "Medical team",
+    "medicalIntro": "Meet our cardiology specialists, experts in their fields.",
     "paramedicalTitle": "Paramedical team",
+    "paramedicalIntro": "Our paramedical team supports patients daily.",
     "researchTitle": "Research team",
+    "researchIntro": "The research team leads and coordinates clinical studies.",
     "administrativeTitle": "Administrative team",
-    "galleryTitle": "Photo gallery"
+    "administrativeIntro": "The administrative team handles coordination and reception.",
+    "galleryTitle": "Photo gallery",
+    "galleryIntro": "A glimpse into our department's daily life.",
+    "comingSoon": "Content coming soon",
+    "headOfDepartment": "Head of department",
+    "hospitalPractitioner": "Hospital practitioner",
+    "cardiologist": "Cardiologist",
+    "nurse": "Nurse",
+    "physiotherapist": "Physiotherapist",
+    "researcher": "Researcher",
+    "adminManager": "Administrative manager",
+    "specialty": {
+      "interventionalCardiology": "Interventional cardiology",
+      "echocardiography": "Echocardiography",
+      "cardiacRehabilitation": "Cardiac rehabilitation",
+      "electrophysiology": "Electrophysiology",
+      "usic": "Cardiac ICU",
+      "rehabilitation": "Rehabilitation",
+      "clinicalTrials": "Clinical trials",
+      "coordination": "Coordination"
+    }
   },
   "metadata": {
     "title": "FeedbackApp",

@@ -134,4 +134,20 @@
   .animate-heartbeat { animation: heartbeat 1s ease-in-out infinite; }
 
   /* navbar underline animation removed per request */
+
+  /* Team page sidebar active state using :target */
+  .team-layout .section-nav a { transition: background-color .15s ease, color .15s ease; }
+  .team-layout:has(#medical:target) .section-nav a[href="#medical"],
+  .team-layout:has(#paramedical:target) .section-nav a[href="#paramedical"],
+  .team-layout:has(#research:target) .section-nav a[href="#research"],
+  .team-layout:has(#administrative:target) .section-nav a[href="#administrative"],
+  .team-layout:has(#gallery:target) .section-nav a[href="#gallery"] {
+    background-color: #0F2C6B;
+    color: white;
+  }
+  /* Default active when no hash: highlight first section */
+  .team-layout:not(:has(:target)) .section-nav a[href="#medical"] {
+    background-color: #0F2C6B;
+    color: white;
+  }
 }

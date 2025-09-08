@@ -95,11 +95,36 @@
 		"welcome": "Bienvenue sur votre profil"
 	},
 	"teamPage": {
+		"title": "Notre équipe",
+		"back": "Retour",
 		"medicalTitle": "Equipe médicale",
+		"medicalIntro": "Découvrez nos médecins spécialisés en cardiologie, experts dans leurs domaines respectifs.",
 		"paramedicalTitle": "Equipe paramédicale",
+		"paramedicalIntro": "Notre équipe paramédicale accompagne les patients au quotidien.",
 		"researchTitle": "Equipe recherche",
+		"researchIntro": "L'équipe recherche conduit et coordonne nos études cliniques.",
 		"administrativeTitle": "Equipe administrative",
-		"galleryTitle": "Galerie photos"
+		"administrativeIntro": "L'équipe administrative assure la coordination et l'accueil.",
+		"galleryTitle": "Galerie photos",
+		"galleryIntro": "Découvrez des moments de vie du service.",
+		"comingSoon": "Contenu à venir",
+		"headOfDepartment": "Chef de service",
+		"hospitalPractitioner": "Praticien hospitalier",
+		"cardiologist": "Cardiologue",
+		"nurse": "Infirmier·ère",
+		"physiotherapist": "Kinésithérapeute",
+		"researcher": "Chercheur·euse",
+		"adminManager": "Responsable administratif·ve",
+		"specialty": {
+			"interventionalCardiology": "Cardiologie interventionnelle",
+			"echocardiography": "Échocardiographie",
+			"cardiacRehabilitation": "Réadaptation cardiaque",
+			"electrophysiology": "Rythmologie",
+			"usic": "USIC",
+			"rehabilitation": "Réadaptation",
+			"clinicalTrials": "Essais cliniques",
+			"coordination": "Coordination"
+		}
 	},
 	"metadata": {
 		"title": "FeedbackApp",

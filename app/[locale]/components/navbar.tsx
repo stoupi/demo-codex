@@ -17,15 +17,16 @@ export function Navbar() {
   const router = useRouter();
   const locale = useLocale();
 
-  const toggleLanguage = () => {
-    const newLocale = locale === 'en' ? 'fr' : 'en';
+  const switchToLocale = (targetLocale: 'en' | 'fr') => {
+    if (targetLocale === locale) return;
     const currentPath = window.location.pathname.replace(`/${locale}`, '');
-    router.push(currentPath || '/', { locale: newLocale });
+    router.push(currentPath || '/', { locale: targetLocale });
   };
 
   const [infoOpen, setInfoOpen] = useState(false);
   const [researchOpen, setResearchOpen] = useState(false);
   const [teamOpen, setTeamOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white">
@@ -133,10 +134,10 @@ export function Navbar() {
                 <Link href="/team#paramedical" className="w-full">{t('teamParamedical')}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
-                <Link href="/team#research" className="w-full">{t('teamResearch')}</Link>
+                <Link href="/team#administrative" className="w-full">{t('teamAdministrative')}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
-                <Link href="/team#administrative" className="w-full">{t('teamAdministrative')}</Link>
+                <Link href="/team#research" className="w-full">{t('teamResearch')}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
                 <Link href="/team#gallery" className="w-full">{t('teamGallery')}</Link>
@@ -147,13 +148,37 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <button
-            onClick={toggleLanguage}
-            className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 text-lg text-[#0063AF] hover:bg-[#eef5fc]"
-            title={locale === 'en' ? 'Passer en FR' : 'Switch to EN'}
-          >
-            {locale === 'fr' ? 'FR' : 'EN'} <span>▾</span>
-          </button>
+          <DropdownMenu open={languageOpen} onOpenChange={setLanguageOpen}>
+            <DropdownMenuTrigger
+              className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
+              onMouseEnter={() => setLanguageOpen(true)}
+            >
+              <span className="inline-flex items-center gap-1">
+                {locale === 'fr' ? 'FR' : 'EN'}
+                <ChevronDownIcon className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              sideOffset={8}
+              className="min-w-[10rem] text-[#0063AF]"
+              onMouseEnter={() => setLanguageOpen(true)}
+              onMouseLeave={() => setLanguageOpen(false)}
+            >
+              <DropdownMenuItem
+                className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors"
+                onClick={() => switchToLocale('fr')}
+              >
+                Français (FR)
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors"
+                onClick={() => switchToLocale('en')}
+              >
+                English (EN)
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Link
             href="/donate"
             className="group rounded-full bg-[#F05A7A] px-5 py-2.5 text-lg font-medium text-white hover:bg-[#E44F70]"

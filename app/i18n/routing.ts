@@ -5,5 +5,13 @@ export const routing = defineRouting({
   locales: ['en', 'fr'],
 
   // Used when no locale matches
-  defaultLocale: 'en'
+  defaultLocale: 'fr',
+
+  // Localized pathnames per locale
+  pathnames: {
+    '/team': {
+      en: '/team',
+      fr: '/notre-equipe'
+    }
+  }
 });

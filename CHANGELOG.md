@@ -34,6 +34,8 @@
  - Submenu hover: items turn white text on deep blue `#0F2C6B` background for clear highlight.
 - Hero: added a team image to the right of the title on desktop (`/assets/equipe.jpeg` by default, overridable via `HERO_TEAM_IMAGE_URL` setting or `NEXT_PUBLIC_HERO_TEAM_IMAGE_URL`).
 - Hero layout: shifted content block to the left (keeps centered alignment within its column) and enlarged the team photo while preserving the original aspect ratio.
+- Hero image sizing: reduced overall size slightly (to ~600px wide) and shifted further right (`pr-8` plus `-mr-[200px]`).
+- Hero layout: foreground group shifted 100px to the left (`md:-ml-[100px]`).
 - Hero CTAs: updated labels and layout
   - Primary now “Prendre rendez-vous en ligne” with a calendar icon above the text (EN: “Book an appointment online”).
   - Secondary becomes “Venir à Lariboisière” (EN: “Getting to Lariboisière”).
