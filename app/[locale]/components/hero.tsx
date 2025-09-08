@@ -51,13 +51,83 @@ export async function Hero({ locale }: HeroProps) {
           </div>
           <div className="flex flex-col items-center gap-5 sm:flex-row">
             <Link href="/appointments">
-              <Button size="lg" className="rounded-[14px] bg-white px-8 text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]">
-                {t('primaryCta')}
+              <Button
+                size="lg"
+                className="h-40 w-32 rounded-[14px] bg-white p-4 text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]"
+              >
+                <span className="flex flex-col items-center leading-tight text-lg font-medium text-center">
+                  <span
+                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#1F6DB2]"
+                    style={{
+                      WebkitMaskImage: "url('/assets/icons/calendar-clock.svg')",
+                      maskImage: "url('/assets/icons/calendar-clock.svg')",
+                      WebkitMaskRepeat: 'no-repeat',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskPosition: 'center',
+                      maskPosition: 'center',
+                      WebkitMaskSize: 'contain',
+                      maskSize: 'contain',
+                    }}
+                    aria-hidden
+                  />
+                  <span>
+                    {t('primaryCtaL1')}<br />
+                    {t('primaryCtaL2')}<br />
+                    {t('primaryCtaL3')}
+                  </span>
+                </span>
               </Button>
             </Link>
-            <Link href="/patients">
-              <Button size="lg" variant="outline" className="rounded-[14px] border-2 border-white bg-transparent px-8 text-white hover:bg-white/10">
-                {t('secondaryCta')}
+            <Link href="/access">
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-40 w-32 rounded-[14px] border-2 border-white bg-transparent p-4 text-lg font-medium text-white hover:bg-white/10"
+              >
+                <span className="flex flex-col items-center text-center">
+                  <span
+                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#1F6DB2]"
+                    style={{
+                      WebkitMaskImage: "url('/assets/icons/map-pinned.svg')",
+                      maskImage: "url('/assets/icons/map-pinned.svg')",
+                      WebkitMaskRepeat: 'no-repeat',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskPosition: 'center',
+                      maskPosition: 'center',
+                      WebkitMaskSize: 'contain',
+                      maskSize: 'contain',
+                    }}
+                    aria-hidden
+                  />
+                  {t('secondaryCtaL1')}<br />
+                  {t('secondaryCtaL2')}
+                </span>
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-40 w-32 rounded-[14px] border-2 border-white bg-transparent p-4 text-lg font-medium text-white hover:bg-white/10"
+              >
+                <span className="flex flex-col items-center text-center">
+                  <span
+                    className="mb-2 inline-block h-[50px] w-[50px] bg-[#1F6DB2]"
+                    style={{
+                      WebkitMaskImage: "url('/assets/icons/phone.svg')",
+                      maskImage: "url('/assets/icons/phone.svg')",
+                      WebkitMaskRepeat: 'no-repeat',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskPosition: 'center',
+                      maskPosition: 'center',
+                      WebkitMaskSize: 'contain',
+                      maskSize: 'contain',
+                    }}
+                    aria-hidden
+                  />
+                  {t('tertiaryCtaL1')}<br />
+                  {t('tertiaryCtaL2')}
+                </span>
               </Button>
             </Link>
           </div>

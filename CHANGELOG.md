@@ -20,11 +20,18 @@
  - Corrected FR hero subtitle wording to: "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)".
 - Donate button: added a heart icon that animates with a heartbeat on hover only.
 - Donate button icon now sourced from `public/assets/heart.svg` and animated on hover.
+ - Donate button: replaced static SVG with Lottie animation loader component using `/assets/heart.json` (plays on hover). Requires `lottie-web` to be installed to animate; otherwise falls back gracefully.
 - Hero: added a line below subtitle — “Chef de service : Professeur Patrick HENRY” (localized).
 - Hero spacing: grouped subtitle and chief lines with tighter spacing and same font size for visual cohesion.
 - Navbar links: added a subtle underline reveal animation on hover/focus matching `#0063AF`.
 - Hero: added a team image to the right of the title on desktop (`/assets/equipe.jpeg` by default, overridable via `HERO_TEAM_IMAGE_URL` setting or `NEXT_PUBLIC_HERO_TEAM_IMAGE_URL`).
- - Hero layout: shifted content block to the left (keeps centered alignment within its column) and enlarged the team photo while preserving the original aspect ratio.
+- Hero layout: shifted content block to the left (keeps centered alignment within its column) and enlarged the team photo while preserving the original aspect ratio.
+- Hero CTAs: updated labels and layout
+  - Primary now “Prendre rendez-vous en ligne” with a calendar icon above the text (EN: “Book an appointment online”).
+  - Secondary becomes “Venir à Lariboisière” (EN: “Getting to Lariboisière”).
+  - Added third CTA “Nous contacter” (EN: “Contact us”).
+  - All three CTAs re-styled to be taller than wide, with larger text, and the calendar icon scaled up 2x.
+  - Icons: masked SVGs from `public/assets/icons` (50×50) now use brand blue `#1F6DB2` as fill; stroke width increased for visibility.
 
 ## Asset: Hand-drawn Heart SVG
 

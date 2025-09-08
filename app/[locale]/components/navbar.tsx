@@ -2,6 +2,7 @@
 
 import { Link, useRouter } from '@/app/i18n/navigation';
 import Image from 'next/image';
+import DonateHeart from './donate-heart';
 import { useTranslations, useLocale } from 'next-intl';
 
 export function Navbar() {
@@ -47,14 +48,7 @@ export function Navbar() {
             className="group rounded-full bg-[#F05A7A] px-4 py-2 text-sm font-medium text-white hover:bg-[#E44F70]"
           >
             <span className="inline-flex items-center gap-2">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="h-4 w-4 text-white transition-transform group-hover:animate-heartbeat"
-                fill="currentColor"
-              >
-                <path d="M12 21s-6.716-4.21-9.193-7.476C.47 10.81 2.01 6.75 5.6 6.1c2.012-.36 3.814.57 4.9 2.13 1.086-1.56 2.888-2.49 4.9-2.13 3.59.65 5.13 4.71 2.793 7.424C18.716 16.79 12 21 12 21z"/>
-              </svg>
+              <DonateHeart path="/assets/heart.json" size={16} />
               {t('donate')}
             </span>
           </Link>
