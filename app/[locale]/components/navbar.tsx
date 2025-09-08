@@ -1,6 +1,6 @@
 'use client';
 
-import { Link, useRouter } from '@/app/i18n/navigation';
+import { Link, useRouter, getPathname } from '@/app/i18n/navigation';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,8 +19,8 @@ export function Navbar() {
 
   const switchToLocale = (targetLocale: 'en' | 'fr') => {
     if (targetLocale === locale) return;
-    const currentPath = window.location.pathname.replace(`/${locale}`, '');
-    router.push(currentPath || '/', { locale: targetLocale });
+    const pathname = getPathname();
+    router.push(pathname, { locale: targetLocale });
   };
 
   const [openMenu, setOpenMenu] = useState<null | 'info' | 'research' | 'team' | 'language'>(null);
@@ -125,19 +125,19 @@ export function Navbar() {
               onMouseLeave={() => setOpenMenu(null)}
             >
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
-                <Link href="/team#medical" className="w-full">{t('teamMedical')}</Link>
+                <Link href={{ pathname: '/team', hash: 'medical' }} className="w-full">{t('teamMedical')}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
-                <Link href="/team#paramedical" className="w-full">{t('teamParamedical')}</Link>
+                <Link href={{ pathname: '/team', hash: 'paramedical' }} className="w-full">{t('teamParamedical')}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
-                <Link href="/team#administrative" className="w-full">{t('teamAdministrative')}</Link>
+                <Link href={{ pathname: '/team', hash: 'administrative' }} className="w-full">{t('teamAdministrative')}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
-                <Link href="/team#research" className="w-full">{t('teamResearch')}</Link>
+                <Link href={{ pathname: '/team', hash: 'research' }} className="w-full">{t('teamResearch')}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
-                <Link href="/team#gallery" className="w-full">{t('teamGallery')}</Link>
+                <Link href={{ pathname: '/team', hash: 'gallery' }} className="w-full">{t('teamGallery')}</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
