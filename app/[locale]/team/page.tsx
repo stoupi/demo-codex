@@ -62,7 +62,7 @@ export default async function TeamPage() {
             <a href="#administrative" className="px-3 py-2 rounded-md text-[#184F88] font-medium hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white transition-colors">{t('administrativeTitle')}</a>
             <a href="#research" className="px-3 py-2 rounded-md text-[#184F88] font-medium hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white transition-colors">{t('researchTitle')}</a>
             <a href="#gallery" className="px-3 py-2 rounded-md text-[#184F88] font-medium hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white transition-colors">{t('galleryTitle')}</a>
-            <Link href="/join" className="mt-2 inline-flex items-center justify-center rounded-full bg-[#F05A7A] px-4 py-2 text-white font-medium hover:bg-[#E44F70]">
+            <Link href="/join" className="mt-2 inline-flex items-center justify-center rounded-full bg-[#F05A7A] px-4 py-2 text-white font-medium text-lg hover:bg-[#E44F70]">
               <span
                 className="mr-2 inline-block h-[20px] w-[20px] bg-white"
                 style={{

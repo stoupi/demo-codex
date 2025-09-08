@@ -1,6 +1,6 @@
 'use client';
 
-import { Link, useRouter, getPathname } from '@/app/i18n/navigation';
+import { Link, useRouter, usePathname } from '@/app/i18n/navigation';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,11 +15,11 @@ import { useState } from 'react';
 export function Navbar() {
   const t = useTranslations('navigation');
   const router = useRouter();
+  const pathname = usePathname();
   const locale = useLocale();
 
   const switchToLocale = (targetLocale: 'en' | 'fr') => {
     if (targetLocale === locale) return;
-    const pathname = getPathname();
     router.push(pathname, { locale: targetLocale });
   };
 
@@ -180,7 +180,7 @@ export function Navbar() {
             href="https://don-hopitaux-nord.aphp.fr/lariboisiere/cardiologie/~mon-don"
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-full bg-[#F05A7A] px-5 py-2.5 text-lg font-medium text-white hover:bg-[#E44F70]"
+            className="group rounded-full bg-[#F05A7A] px-5 py-2 text-lg font-medium text-white hover:bg-[#E44F70]"
           >
             <span className="inline-flex items-center gap-2">
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current">
