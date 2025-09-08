@@ -23,10 +23,7 @@ export function Navbar() {
     router.push(currentPath || '/', { locale: targetLocale });
   };
 
-  const [infoOpen, setInfoOpen] = useState(false);
-  const [researchOpen, setResearchOpen] = useState(false);
-  const [teamOpen, setTeamOpen] = useState(false);
-  const [languageOpen, setLanguageOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<null | 'info' | 'research' | 'team' | 'language'>(null);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white">
@@ -41,10 +38,10 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-lg">
-          <DropdownMenu open={infoOpen} onOpenChange={setInfoOpen}>
+          <DropdownMenu open={openMenu === 'info'} onOpenChange={(o) => setOpenMenu(o ? 'info' : (openMenu === 'info' ? null : openMenu))}>
             <DropdownMenuTrigger
               className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
-              onMouseEnter={() => setInfoOpen(true)}
+              onMouseEnter={() => setOpenMenu('info')}
             >
               <span className="inline-flex items-center gap-1">
                 {t('patients')}
@@ -55,8 +52,8 @@ export function Navbar() {
               align="start"
               sideOffset={8}
               className="min-w-[18rem] text-[#0063AF]"
-              onMouseEnter={() => setInfoOpen(true)}
-              onMouseLeave={() => setInfoOpen(false)}
+              onMouseEnter={() => setOpenMenu('info')}
+              onMouseLeave={() => setOpenMenu(null)}
             >
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
                 <Link href="/emergencies" className="w-full">{t('emergencies')}</Link>
@@ -76,10 +73,10 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
           <Link href="/services" className="text-[#0063AF] hover:text-[#0063AF] font-medium">{t('care')}</Link>
-          <DropdownMenu open={researchOpen} onOpenChange={setResearchOpen}>
+          <DropdownMenu open={openMenu === 'research'} onOpenChange={(o) => setOpenMenu(o ? 'research' : (openMenu === 'research' ? null : openMenu))}>
             <DropdownMenuTrigger
               className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
-              onMouseEnter={() => setResearchOpen(true)}
+              onMouseEnter={() => setOpenMenu('research')}
             >
               <span className="inline-flex items-center gap-1">
                 {t('research')}
@@ -90,8 +87,8 @@ export function Navbar() {
               align="start"
               sideOffset={8}
               className="min-w-[20rem] text-[#0063AF]"
-              onMouseEnter={() => setResearchOpen(true)}
-              onMouseLeave={() => setResearchOpen(false)}
+              onMouseEnter={() => setOpenMenu('research')}
+              onMouseLeave={() => setOpenMenu(null)}
             >
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
                 <Link href="/research/miracl-ai" className="w-full">{t('miracl')}</Link>
@@ -110,10 +107,10 @@ export function Navbar() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <DropdownMenu open={teamOpen} onOpenChange={setTeamOpen}>
+          <DropdownMenu open={openMenu === 'team'} onOpenChange={(o) => setOpenMenu(o ? 'team' : (openMenu === 'team' ? null : openMenu))}>
             <DropdownMenuTrigger
               className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
-              onMouseEnter={() => setTeamOpen(true)}
+              onMouseEnter={() => setOpenMenu('team')}
             >
               <span className="inline-flex items-center gap-1">
                 {t('team')}
@@ -124,8 +121,8 @@ export function Navbar() {
               align="start"
               sideOffset={8}
               className="min-w-[20rem] text-[#0063AF]"
-              onMouseEnter={() => setTeamOpen(true)}
-              onMouseLeave={() => setTeamOpen(false)}
+              onMouseEnter={() => setOpenMenu('team')}
+              onMouseLeave={() => setOpenMenu(null)}
             >
               <DropdownMenuItem className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors" asChild>
                 <Link href="/team#medical" className="w-full">{t('teamMedical')}</Link>
@@ -148,10 +145,10 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <DropdownMenu open={languageOpen} onOpenChange={setLanguageOpen}>
+          <DropdownMenu open={openMenu === 'language'} onOpenChange={(o) => setOpenMenu(o ? 'language' : (openMenu === 'language' ? null : openMenu))}>
             <DropdownMenuTrigger
               className="text-[#0063AF] hover:text-[#0063AF] outline-none font-medium"
-              onMouseEnter={() => setLanguageOpen(true)}
+              onMouseEnter={() => setOpenMenu('language')}
             >
               <span className="inline-flex items-center gap-1">
                 {locale === 'fr' ? 'FR' : 'EN'}
@@ -162,8 +159,8 @@ export function Navbar() {
               align="end"
               sideOffset={8}
               className="min-w-[10rem] text-[#0063AF]"
-              onMouseEnter={() => setLanguageOpen(true)}
-              onMouseLeave={() => setLanguageOpen(false)}
+              onMouseEnter={() => setOpenMenu('language')}
+              onMouseLeave={() => setOpenMenu(null)}
             >
               <DropdownMenuItem
                 className="text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors"

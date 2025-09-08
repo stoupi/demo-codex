@@ -36,6 +36,8 @@
 	"home": {
 		"title": "",
 		"heroTitle": "Bienvenue dans notre service de Cardiologie",
+		"heroTitleL1": "Bienvenue dans notre service de",
+		"heroTitleL2": "Cardiologie",
 		"heroSubtitle": "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)",
 		"primaryCta": "Prendre rendez-vous en ligne",
 		"primaryCtaL1": "Prendre",

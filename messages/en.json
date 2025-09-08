@@ -36,6 +36,8 @@
   "home": {
     "title": "",
     "heroTitle": "Welcome to our Cardiology Department",
+    "heroTitleL1": "Welcome to our",
+    "heroTitleL2": "Cardiology Department",
     "heroSubtitle": "Lariboisière Hospital – Assistance Publique – Hôpitaux de Paris (AP-HP)",
     "primaryCta": "Book an appointment online",
     "primaryCtaL1": "Book an",

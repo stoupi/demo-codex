@@ -37,11 +37,13 @@ export async function Hero({ locale }: HeroProps) {
       {/* Blue overlay to create the tinted transparency */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#2F6FB7]/70 to-[#2A66A6]/70" />
 
-      <div className="relative container mx-auto grid max-w-8xl grid-cols-1 items-start md:items-stretch gap-8 px-5 md:-ml-[100px] py-28 text-center sm:py-34 md:grid-cols-[1fr_auto] md:justify-between">
+      <div className="relative container mx-auto grid max-w-8xl grid-cols-1 items-start md:items-stretch gap-7 px-5 md:px-12 py-28 text-center sm:py-34 md:grid-cols-[1fr_auto] md:justify-between">
         {/* Left content: keep center alignment but shifted left by layout */}
         <div className="flex flex-col items-center gap-6 md:justify-center">
           <h1 className="max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
-            {t('heroTitle')}
+            <span>{t('heroTitleL1')}</span>
+            <br />
+            <span>{t('heroTitleL2')}</span>
           </h1>
           <div className="flex flex-col items-center gap-1">
             <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl font-semibold">
@@ -131,7 +133,7 @@ export async function Hero({ locale }: HeroProps) {
           </div>
         </div>
         {/* Right: team image, larger and keeping original aspect ratio */}
-        <div className="hidden md:flex h-full items-stretch justify-self-end pr-8">
+        <div className="hidden md:flex h-full items-stretch justify-self-end">
           <Image
             src={teamImageUrl}
             alt={t('teamImageAlt')}

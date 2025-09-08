@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { Card, CardContent } from '@/components/ui/card'
 import type { TeamMember } from '@/types/team'
+import Script from 'next/script'
 
 function SectionGrid({ title, intro, members }: { title: string; intro?: string; members: TeamMember[] }) {
   return (
@@ -48,12 +49,12 @@ export default async function TeamPage() {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <div className="mb-6 text-[#184F88]">
+      <div className="sticky top-20 z-20 bg-white/90 backdrop-blur py-4 mb-6 text-[#184F88]">
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-[#0063AF]">{t('title')}</h1>
       </div>
 
       <div className="team-layout grid grid-cols-1 lg:grid-cols-[18rem_1fr] gap-8">
-        <aside className="lg:sticky lg:top-24 bg-white rounded-lg p-4 border h-max">
+        <aside className="sticky top-40 z-10 bg-white rounded-lg p-4 border h-max">
           <nav className="section-nav flex flex-col gap-2">
             <a href="#medical" className="px-3 py-2 rounded-md text-[#184F88] font-medium hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white transition-colors">{t('medicalTitle')}</a>
             <a href="#paramedical" className="px-3 py-2 rounded-md text-[#184F88] font-medium hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white transition-colors">{t('paramedicalTitle')}</a>
@@ -64,23 +65,23 @@ export default async function TeamPage() {
         </aside>
 
         <main>
-          <section id="medical" className="scroll-mt-28 mb-12">
+          <section id="medical" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
             <SectionGrid title={t('medicalTitle')} intro={t('medicalIntro')} members={medical} />
           </section>
 
-          <section id="paramedical" className="scroll-mt-28 mb-12">
+          <section id="paramedical" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
             <SectionGrid title={t('paramedicalTitle')} intro={t('paramedicalIntro')} members={paramedical} />
           </section>
 
-          <section id="research" className="scroll-mt-28 mb-12">
+          <section id="research" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
             <SectionGrid title={t('researchTitle')} intro={t('researchIntro')} members={research} />
           </section>
 
-          <section id="administrative" className="scroll-mt-28 mb-12">
+          <section id="administrative" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
             <SectionGrid title={t('administrativeTitle')} intro={t('administrativeIntro')} members={administrative} />
           </section>
 
-          <section id="gallery" className="scroll-mt-28 mb-12">
+          <section id="gallery" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
             <h2 className="text-2xl font-semibold text-[#184F88] mb-2">{t('galleryTitle')}</h2>
             <p className="text-[#2A66A6] mb-6">{t('galleryIntro')}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -89,6 +90,45 @@ export default async function TeamPage() {
           </section>
         </main>
       </div>
+
+      <Script id="team-scrollspy" strategy="afterInteractive">
+        {`
+          (function(){
+            const ids = ['medical','paramedical','administrative','research','gallery'];
+            const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+            if (sections.length === 0) return;
+            let active = '';
+            const setHash = (id) => {
+              if (active === id) return;
+              active = id;
+              const url = new URL(window.location.href);
+              url.hash = id ? '#' + id : '';
+              history.replaceState(null, '', url);
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+              // Find the entry closest to top and sufficiently visible
+              let best = null;
+              for (const e of entries) {
+                if (e.isIntersecting) {
+                  if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
+                }
+              }
+              if (best && best.target && best.intersectionRatio > 0.2) {
+                setHash(best.target.id);
+              } else {
+                // Fallback: find first section below top
+                const sorted = sections
+                  .map(el => ({ id: el.id, top: el.getBoundingClientRect().top }))
+                  .sort((a,b) => Math.abs(a.top) - Math.abs(b.top));
+                if (sorted[0]) setHash(sorted[0].id);
+              }
+            }, { root: null, threshold: [0.2, 0.5, 0.8], rootMargin: '-160px 0px -60% 0px' });
+
+            sections.forEach(s => observer.observe(s));
+          })();
+        `}
+      </Script>
     </div>
   )
 }
