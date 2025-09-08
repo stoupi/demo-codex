@@ -96,32 +96,33 @@ export default async function TeamPage() {
           (function(){
             const ids = ['medical','paramedical','administrative','research','gallery'];
             const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
-            if (sections.length === 0) return;
-            let active = '';
-            const setHash = (id) => {
-              if (active === id) return;
-              active = id;
-              const url = new URL(window.location.href);
-              url.hash = id ? '#' + id : '';
-              history.replaceState(null, '', url);
+            const nav = document.querySelector('.team-layout .section-nav');
+            if (!nav || sections.length === 0) return;
+            const links = Array.from(nav.querySelectorAll('a'));
+
+            const setActive = (id) => {
+              links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
             };
 
+            // Initialize based on current hash or first id
+            const initial = (location.hash || '#'+ids[0]).slice(1);
+            setActive(initial);
+
             const observer = new IntersectionObserver((entries) => {
-              // Find the entry closest to top and sufficiently visible
-              let best = null;
+              let bestId = null;
+              let bestRatio = 0;
               for (const e of entries) {
-                if (e.isIntersecting) {
-                  if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
+                if (e.isIntersecting && e.intersectionRatio > bestRatio) {
+                  bestId = e.target.id; bestRatio = e.intersectionRatio;
                 }
               }
-              if (best && best.target && best.intersectionRatio > 0.2) {
-                setHash(best.target.id);
+              if (bestId) {
+                setActive(bestId);
               } else {
-                // Fallback: find first section below top
                 const sorted = sections
                   .map(el => ({ id: el.id, top: el.getBoundingClientRect().top }))
                   .sort((a,b) => Math.abs(a.top) - Math.abs(b.top));
-                if (sorted[0]) setHash(sorted[0].id);
+                if (sorted[0]) setActive(sorted[0].id);
               }
             }, { root: null, threshold: [0.2, 0.5, 0.8], rootMargin: '-160px 0px -60% 0px' });
 

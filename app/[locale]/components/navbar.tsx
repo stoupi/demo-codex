@@ -176,8 +176,10 @@ export function Navbar() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link
-            href="/donate"
+          <a
+            href="https://don-hopitaux-nord.aphp.fr/lariboisiere/cardiologie/~mon-don"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group rounded-full bg-[#F05A7A] px-5 py-2.5 text-lg font-medium text-white hover:bg-[#E44F70]"
           >
             <span className="inline-flex items-center gap-2">
@@ -186,7 +188,7 @@ export function Navbar() {
               </svg>
               {t('donate')}
             </span>
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

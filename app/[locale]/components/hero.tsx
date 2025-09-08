@@ -40,13 +40,13 @@ export async function Hero({ locale }: HeroProps) {
       <div className="relative container mx-auto grid max-w-8xl grid-cols-1 items-start md:items-stretch gap-7 px-5 md:px-12 py-28 text-center sm:py-34 md:grid-cols-[1fr_auto] md:justify-between">
         {/* Left content: keep center alignment but shifted left by layout */}
         <div className="flex flex-col items-center gap-6 md:justify-center">
-          <h1 className="max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
+          <h1 className="max-w-[60rem] text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
             <span>{t('heroTitleL1')}</span>
             <br />
             <span>{t('heroTitleL2')}</span>
           </h1>
           <div className="flex flex-col items-center gap-1">
-            <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl font-semibold">
+            <p className="max-w-[60rem] text-pretty text-[#E6F0FA] sm:text-xl font-semibold">
               {t('heroSubtitle')}
             </p>
             <p className="text-[#E6F0FA] sm:text-xl font-semibold">{t('chief')}</p>

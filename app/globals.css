@@ -137,6 +137,7 @@
 
   /* Team page sidebar active state using :target */
   .team-layout .section-nav a { transition: background-color .15s ease, color .15s ease; }
+  .team-layout .section-nav a.is-active { background-color: #0F2C6B; color: white; }
   .team-layout:has(#medical:target) .section-nav a[href="#medical"],
   .team-layout:has(#paramedical:target) .section-nav a[href="#paramedical"],
   .team-layout:has(#research:target) .section-nav a[href="#research"],
