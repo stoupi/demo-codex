@@ -23,7 +23,8 @@
 - Hero: added a line below subtitle — “Chef de service : Professeur Patrick HENRY” (localized).
 - Hero spacing: grouped subtitle and chief lines with tighter spacing and same font size for visual cohesion.
 - Navbar links: added a subtle underline reveal animation on hover/focus matching `#0063AF`.
- - Hero: added a team image to the right of the title on desktop (`/assets/team.png` by default, overridable via `HERO_TEAM_IMAGE_URL` setting or `NEXT_PUBLIC_HERO_TEAM_IMAGE_URL`).
+- Hero: added a team image to the right of the title on desktop (`/assets/equipe.jpeg` by default, overridable via `HERO_TEAM_IMAGE_URL` setting or `NEXT_PUBLIC_HERO_TEAM_IMAGE_URL`).
+ - Hero layout: shifted content block to the left (keeps centered alignment within its column) and enlarged the team photo while preserving the original aspect ratio.
 
 ## Asset: Hand-drawn Heart SVG
 

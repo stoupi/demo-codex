@@ -24,7 +24,7 @@ export async function Hero({ locale }: HeroProps) {
   } catch {
     teamUrl = null;
   }
-  const teamImageUrl = teamUrl ?? process.env.NEXT_PUBLIC_HERO_TEAM_IMAGE_URL ?? '/assets/team.png';
+  const teamImageUrl = teamUrl ?? process.env.NEXT_PUBLIC_HERO_TEAM_IMAGE_URL ?? '/assets/equipe.jpeg';
 
   return (
     <section className="relative overflow-hidden">
@@ -37,38 +37,41 @@ export async function Hero({ locale }: HeroProps) {
       {/* Blue overlay to create the tinted transparency */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#2F6FB7]/70 to-[#2A66A6]/70" />
 
-      <div className="relative container mx-auto flex flex-col items-center gap-8 px-4 py-28 text-center sm:py-36">
-        <div className="flex w-full max-w-6xl items-center justify-center gap-6 sm:gap-8">
-          <h1 className="flex-1 text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
+      <div className="relative container mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-28 text-center sm:py-36 md:grid-cols-[1fr_auto] md:justify-between">
+        {/* Left content: keep center alignment but shifted left by layout */}
+        <div className="flex flex-col items-center gap-6">
+          <h1 className="max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
             {t('heroTitle')}
           </h1>
-          <div className="hidden md:block">
-            <Image
-              src={teamImageUrl}
-              alt={t('teamImageAlt')}
-              width={220}
-              height={220}
-              className="h-[220px] w-[220px] rounded-lg object-cover shadow-sm"
-            />
+          <div className="flex flex-col items-center gap-1">
+            <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl">
+              {t('heroSubtitle')}
+            </p>
+            <p className="text-[#E6F0FA] sm:text-xl">{t('chief')}</p>
+          </div>
+          <div className="flex flex-col items-center gap-5 sm:flex-row">
+            <Link href="/appointments">
+              <Button size="lg" className="rounded-[14px] bg-white px-8 text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]">
+                {t('primaryCta')}
+              </Button>
+            </Link>
+            <Link href="/patients">
+              <Button size="lg" variant="outline" className="rounded-[14px] border-2 border-white bg-transparent px-8 text-white hover:bg-white/10">
+                {t('secondaryCta')}
+              </Button>
+            </Link>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-1">
-          <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl">
-            {t('heroSubtitle')}
-          </p>
-          <p className="text-[#E6F0FA] sm:text-xl">{t('chief')}</p>
-        </div>
-        <div className="flex flex-col items-center gap-5 sm:flex-row">
-          <Link href="/appointments">
-            <Button size="lg" className="rounded-[14px] bg-white px-8 text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]">
-              {t('primaryCta')}
-            </Button>
-          </Link>
-          <Link href="/patients">
-            <Button size="lg" variant="outline" className="rounded-[14px] border-2 border-white bg-transparent px-8 text-white hover:bg-white/10">
-              {t('secondaryCta')}
-            </Button>
-          </Link>
+        {/* Right: team image, larger and keeping original aspect ratio */}
+        <div className="hidden md:block">
+          <Image
+            src={teamImageUrl}
+            alt={t('teamImageAlt')}
+            width={520}
+            height={347}
+            sizes="(min-width: 768px) 520px, 0px"
+            className="h-auto w-[520px] rounded-lg object-cover shadow-md"
+          />
         </div>
       </div>
     </section>
