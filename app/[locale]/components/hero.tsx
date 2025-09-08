@@ -46,16 +46,21 @@ export async function Hero({ locale }: HeroProps) {
             <span>{t('heroTitleL2')}</span>
           </h1>
           <div className="flex flex-col items-center gap-1">
-            <p className="max-w-[60rem] text-pretty text-[#E6F0FA] sm:text-xl font-semibold">
+            <p className="max-w-[100rem] text-pretty text-[#E6F0FA] sm:text-xl font-semibold">
               {t('heroSubtitle')}
             </p>
             <p className="text-[#E6F0FA] sm:text-xl font-semibold">{t('chief')}</p>
           </div>
           <div className="flex flex-col items-center gap-5 sm:flex-row">
-            <Link href="/appointments">
-              <Button
-                size="lg"
-                className="group h-40 w-36 cursor-pointer rounded-[14px] bg-white p-4 text-base text-[#0F2C6B] shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
+            <Button
+              asChild
+              size="lg"
+              className="group h-40 w-36 cursor-pointer rounded-[14px] bg-white p-4 text-base text-[#0F2C6B] shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
+            >
+              <a
+                href="https://mon.aphp.fr/demande-rendez-vous/service-4-47-formulaire-1270"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="flex flex-col items-center leading-tight text-base font-medium text-center">
                   <span
@@ -78,8 +83,8 @@ export async function Hero({ locale }: HeroProps) {
                     {t('primaryCtaL3')}
                   </span>
                 </span>
-              </Button>
-            </Link>
+              </a>
+            </Button>
             <Link href="/access">
               <Button
                 size="lg"

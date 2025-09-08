@@ -146,9 +146,5 @@
     background-color: #0F2C6B;
     color: white;
   }
-  /* Default active when no hash: highlight first section */
-  .team-layout:not(:has(:target)) .section-nav a[href="#medical"] {
-    background-color: #0F2C6B;
-    color: white;
-  }
+  /* Default active rule removed; scrollspy now controls active state */
 }

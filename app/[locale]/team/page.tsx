@@ -73,12 +73,12 @@ export default async function TeamPage() {
             <SectionGrid title={t('paramedicalTitle')} intro={t('paramedicalIntro')} members={paramedical} />
           </section>
 
-          <section id="research" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
-            <SectionGrid title={t('researchTitle')} intro={t('researchIntro')} members={research} />
-          </section>
-
           <section id="administrative" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
             <SectionGrid title={t('administrativeTitle')} intro={t('administrativeIntro')} members={administrative} />
+          </section>
+
+          <section id="research" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
+            <SectionGrid title={t('researchTitle')} intro={t('researchIntro')} members={research} />
           </section>
 
           <section id="gallery" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
@@ -102,6 +102,11 @@ export default async function TeamPage() {
 
             const setActive = (id) => {
               links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+              const url = new URL(window.location.href);
+              if (url.hash !== '#' + id) {
+                url.hash = '#' + id;
+                history.replaceState(null, '', url);
+              }
             };
 
             // Initialize based on current hash or first id
