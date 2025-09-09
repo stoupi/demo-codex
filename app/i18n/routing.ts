@@ -41,6 +41,10 @@ export const routing = defineRouting({
 			en: '/appointments',
 			fr: '/rendez-vous',
 		},
+		'/info': {
+			en: '/info',
+			fr: '/informations-pratiques',
+		},
 		'/dashboard': {
 			en: '/dashboard',
 			fr: '/dashboard',

@@ -85,28 +85,28 @@ export function Navbar() {
 							<DropdownMenuItem
 								className='text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors'
 								asChild>
-									<Link href={'/appointments'} className='w-full'>
+									<Link href={{ pathname: '/info', hash: 'appointments' }} className='w-full'>
 									{t('bookOnline')}
 								</Link>
 							</DropdownMenuItem>
 							<DropdownMenuItem
 								className='text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors'
 								asChild>
-									<Link href={'/access'} className='w-full'>
+									<Link href={{ pathname: '/info', hash: 'access' }} className='w-full'>
 									{t('gettingHere')}
 								</Link>
 							</DropdownMenuItem>
 							<DropdownMenuItem
 								className='text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors'
 								asChild>
-									<Link href={'/faq'} className='w-full'>
+									<Link href={{ pathname: '/info', hash: 'faq' }} className='w-full'>
 									{t('faq')}
 								</Link>
 							</DropdownMenuItem>
 							<DropdownMenuItem
 								className='text-base md:text-lg py-2 text-[#0063AF] hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white data-[highlighted]:bg-[#0F2C6B] data-[highlighted]:text-white transition-colors'
 								asChild>
-									<Link href={'/contact'} className='w-full'>
+									<Link href={{ pathname: '/info', hash: 'contact' }} className='w-full'>
 									{t('contact')}
 								</Link>
 							</DropdownMenuItem>

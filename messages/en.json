@@ -147,4 +147,12 @@
     "title": "FeedbackApp",
     "description": "User feedback application"
   }
+  ,
+  "infoPage": {
+    "title": "Practical information",
+    "appointmentsTitle": "Book an appointment",
+    "accessTitle": "Getting here",
+    "faqTitle": "Frequently asked questions",
+    "contactTitle": "Contact us"
+  }
 }
