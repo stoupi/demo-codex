@@ -7,7 +7,7 @@ import Script from 'next/script'
 function SectionGrid({ title, intro, members }: { title: string; intro?: string; members: TeamMember[] }) {
   return (
     <div>
-      <h2 className="text-2xl font-semibold text-[#184F88] mb-2">{title}</h2>
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#184F88] mb-2">{title}</h2>
       {intro ? <p className="text-[#2A66A6] mb-6">{intro}</p> : null}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {members.map((m) => (
@@ -100,7 +100,7 @@ export default async function TeamPage() {
           </section>
 
           <section id="gallery" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
-            <h2 className="text-2xl font-semibold text-[#184F88] mb-2">{t('galleryTitle')}</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#184F88] mb-2">{t('galleryTitle')}</h2>
             <p className="text-[#2A66A6] mb-6">{t('galleryIntro')}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               <Card className="overflow-hidden"><div className="aspect-[4/3] bg-neutral-100" /><CardContent className="p-5 text-[#184F88]">{t('comingSoon')}</CardContent></Card>
