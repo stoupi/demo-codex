@@ -55,7 +55,7 @@ export async function Hero({ locale }: HeroProps) {
             <Button
               asChild
               size="lg"
-              className="group h-40 w-36 cursor-pointer rounded-[14px] bg-white p-4 text-base text-[#0F2C6B] shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
+              className="group h-36 w-40 cursor-pointer rounded-[14px] bg-white p-4 text-base text-[#0F2C6B] shadow-sm hover:bg-[#0F2C6B] hover:text-white transition-colors duration-200 ease-out"
             >
               <a
                 href="https://mon.aphp.fr/demande-rendez-vous/service-4-47-formulaire-1270"
@@ -88,7 +88,7 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/access">
               <Button
                 size="lg"
-                className="group h-40 w-36 cursor-pointer rounded-[14px] bg-[#FFDF6F] p-4 text-base font-medium text-[#0F2C6B] shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
+                className="group h-36 w-40 cursor-pointer rounded-[14px] bg-white p-4 text-base font-medium text-[#0F2C6B] shadow-sm hover:bg-[#0F2C6B] hover:text-white transition-colors duration-200 ease-out"
               >
                 <span className="flex flex-col items-center text-center">
                   <span
@@ -113,11 +113,11 @@ export async function Hero({ locale }: HeroProps) {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="group h-40 w-36 cursor-pointer rounded-[14px] bg-[#0F2C6B] p-4 text-base font-medium text-white shadow-sm hover:bg-[#F05A7A] hover:text-white transition-colors duration-200 ease-out"
+                className="group h-36 w-40 cursor-pointer rounded-[14px] bg-white p-4 text-base font-medium text-[#0F2C6B] shadow-sm hover:bg-[#0F2C6B] hover:text-white transition-colors duration-200 ease-out"
               >
                 <span className="flex flex-col items-center text-center">
                   <span
-                    className="mb-2 inline-block h-[45px] w-[45px] bg-white"
+                    className="mb-2 inline-block h-[45px] w-[45px] bg-[#0F2C6B] group-hover:bg-white transition-colors duration-200 ease-out"
                     style={{
                       WebkitMaskImage: "url('/assets/icons/phone.svg')",
                       maskImage: "url('/assets/icons/phone.svg')",
