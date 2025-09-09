@@ -13,3 +13,7 @@ export type TeamMember = {
   section: TeamSection;
 };
 
+export type TeamGroup = {
+  title: string;
+  members: TeamMember[];
+};

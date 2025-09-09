@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { Card, CardContent } from '@/components/ui/card'
 import { Link } from '@/app/i18n/navigation'
-import type { TeamMember } from '@/types/team'
+import type { TeamGroup, TeamMember } from '@/types/team'
 import Script from 'next/script'
 
 function SectionGrid({ title, intro, members }: { title: string; intro?: string; members: TeamMember[] }) {
@@ -13,9 +13,11 @@ function SectionGrid({ title, intro, members }: { title: string; intro?: string;
         {members.map((m) => (
           <Card key={m.id} className="overflow-hidden">
             <div className="aspect-[4/3] bg-neutral-100" />
-            <CardContent className="p-5">
+            <CardContent className="p-5 text-center">
               <div className="text-[#0F2C6B] text-lg font-bold">{m.name}</div>
-              <div className="text-[#184F88] mt-1">{m.role}{m.specialty ? ' – ' + m.specialty : ''}</div>
+              {m.role || m.specialty ? (
+                <div className="text-[#184F88] mt-1">{m.role}{m.specialty ? ' – ' + m.specialty : ''}</div>
+              ) : null}
             </CardContent>
           </Card>
         ))}
@@ -24,15 +26,85 @@ function SectionGrid({ title, intro, members }: { title: string; intro?: string;
   )
 }
 
+function GroupedMembersSection({ title, intro, groups }: { title: string; intro?: string; groups: TeamGroup[] }) {
+  return (
+    <div>
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#184F88] mb-2">{title}</h2>
+      {intro ? <p className="text-[#2A66A6] mb-6">{intro}</p> : null}
+      {groups.map((g) => (
+        <div key={g.title} className="mb-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#184F88] mb-3">{g.title}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            {g.members.map((m) => (
+              <Card key={m.id} className="overflow-hidden">
+                <div className="aspect-[4/3] bg-neutral-100" />
+                <CardContent className="p-5 text-center">
+                  <div className="text-[#0F2C6B] text-lg font-bold">{m.name}</div>
+                  {m.role || m.specialty ? (
+                    <div className="text-[#184F88] mt-1">{m.role}{m.specialty ? ' – ' + m.specialty : ''}</div>
+                  ) : null}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default async function TeamPage() {
   const t = await getTranslations('teamPage')
   const nav = await getTranslations('navigation')
 
-  const medical: TeamMember[] = [
-    { id: 'martin', name: 'Dr. Jean-Pierre MARTIN', role: t('headOfDepartment'), specialty: t('specialty.interventionalCardiology'), section: 'medical' },
-    { id: 'bernard', name: 'Dr. Sophie BERNARD', role: t('hospitalPractitioner'), specialty: t('specialty.echocardiography'), section: 'medical' },
-    { id: 'dubois', name: 'Dr. Michel DUBOIS', role: t('cardiologist'), specialty: t('specialty.cardiacRehabilitation'), section: 'medical' },
-    { id: 'laurent', name: 'Dr. Marie LAURENT', role: t('hospitalPractitioner'), specialty: t('specialty.electrophysiology'), section: 'medical' },
+  const medicalGroups: TeamGroup[] = [
+    {
+      title: t('medicalGroups.professors'),
+      members: [
+        { id: 'patrick-henry', name: 'Pr Patrick HENRY', role: t('headOfDepartment'), section: 'medical' },
+        { id: 'alain-cohen-solal', name: 'Pr Alain COHEN SOLAL', role: '', section: 'medical' },
+        { id: 'jean-guillaume-dillinger', name: 'Pr Jean-Guillaume DILLINGER', role: '', section: 'medical' },
+        { id: 'damien-logeart', name: 'Pr Damien LOGEART', role: '', section: 'medical' },
+      ],
+    },
+    {
+      title: t('medicalGroups.hospitalUniversity'),
+      members: [
+        { id: 'theo-pezel', name: 'Dr Théo PEZEL', role: '', section: 'medical' },
+      ],
+    },
+    {
+      title: t('medicalGroups.hospitalPractitioners'),
+      members: [
+        { id: 'florence-beauvais', name: 'Dr Florence BEAUVAIS', role: '', section: 'medical' },
+        { id: 'trecy-goncalves', name: 'Dr Trecy GONCALVES', role: '', section: 'medical' },
+        { id: 'morgane-herry', name: 'Dr Morgane HERRY', role: '', section: 'medical' },
+        { id: 'alexandre-lafont', name: 'Dr Alexandre LAFONT', role: '', section: 'medical' },
+        { id: 'antoine-lequipar', name: 'Dr Antoine LEQUIPAR', role: '', section: 'medical' },
+        { id: 'geraldine-vedrenne', name: 'Dr Géraldine VEDRENNE', role: '', section: 'medical' },
+      ],
+    },
+    {
+      title: t('medicalGroups.clinicAssistants'),
+      members: [
+        { id: 'edouard-ballout', name: 'Dr Edouard BALLOUT', role: '', section: 'medical' },
+        { id: 'emmanuel-gall', name: 'Dr Emmanuel GALL', role: '', section: 'medical' },
+        { id: 'paul-jun-martial', name: 'Dr Paul-Jun MARTIAL', role: '', section: 'medical' },
+      ],
+    },
+    {
+      title: t('medicalGroups.affiliatedPractitioners'),
+      members: [
+        { id: 'f-bouabid', name: 'Dr F. BOUABID', role: '', section: 'medical' },
+        { id: 'p-de-jode', name: 'Dr P. DE JODE', role: '', section: 'medical' },
+        { id: 'a-foucher-lavergne', name: 'Dr A. FOUCHER LAVERGNE', role: '', section: 'medical' },
+        { id: 'a-holeman', name: 'Dr A. HOLEMAN', role: '', section: 'medical' },
+        { id: 'jph-kevorkian', name: 'Dr J-Ph. KEVORKIAN', role: '', section: 'medical' },
+        { id: 'm-laporte', name: 'Dr M. LAPORTE', role: '', section: 'medical' },
+        { id: 'c-luc', name: 'Dr C. LUC', role: '', section: 'medical' },
+        { id: 'm-nicol', name: 'Dr M. NICOL', role: '', section: 'medical' },
+      ],
+    },
   ]
 
   const paramedical: TeamMember[] = [
@@ -40,12 +112,36 @@ export default async function TeamPage() {
     { id: 'kine1', name: 'Lucas LEROY', role: t('physiotherapist'), specialty: t('specialty.rehabilitation'), section: 'paramedical' },
   ]
 
+  const paramedicalGroups: TeamGroup[] = [
+    {
+      title: t('paramedicalGroups.nurseManagers'),
+      members: [
+        { id: 'houriya-zaouch', name: 'Houriya ZAOUCH', role: t('seniorNurseManager'), section: 'paramedical' },
+        { id: 'raphaelle-demabre', name: 'Raphaëlle DEMABRE', role: '', section: 'paramedical' },
+        { id: 'fabrice-favreau', name: 'Fabrice FAVREAU', role: '', section: 'paramedical' },
+      ],
+    },
+    {
+      title: t('paramedicalGroups.nurses'),
+      members: [
+        { id: 'camille-durand', name: 'Camille DURAND', role: t('nurse'), specialty: t('specialty.usic'), section: 'paramedical' },
+        { id: 'lucas-leroy', name: 'Lucas LEROY', role: t('physiotherapist'), specialty: t('specialty.rehabilitation'), section: 'paramedical' },
+      ],
+    },
+    { title: t('paramedicalGroups.nurseAides'), members: [] },
+  ]
+
   const research: TeamMember[] = [
     { id: 'research1', name: 'Dr. Amina KHALID', role: t('researcher'), specialty: t('specialty.clinicalTrials'), section: 'research' },
   ]
 
   const administrative: TeamMember[] = [
-    { id: 'admin1', name: 'Nathalie MOREAU', role: t('adminManager'), specialty: t('specialty.coordination'), section: 'administrative' },
+    { id: 'celine-verissimo', name: 'Céline VERISSIMO', role: t('medicalSecretary'), section: 'administrative' },
+    { id: 'jasmina-blagojevic', name: 'Jasmina BLAGOJEVIC', role: t('medicalSecretary'), section: 'administrative' },
+    { id: 'laetitia-grosjean', name: 'Laëtitia GROSJEAN', role: t('medicalSecretary'), section: 'administrative' },
+    { id: 'aurore-lemay', name: 'Aurore LEMAY', role: t('medicalSecretary'), section: 'administrative' },
+    { id: 'nicaise-baremon', name: 'Nicaise BAREMON', role: t('medicalSecretary'), section: 'administrative' },
+    { id: 'filomena-monteiro-boavista', name: 'Filomena MONTEIRO BOAVISTA', role: t('medicalSecretary'), section: 'administrative' },
   ]
 
   return (
@@ -84,11 +180,11 @@ export default async function TeamPage() {
 
         <main>
           <section id="medical" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
-            <SectionGrid title={t('medicalTitle')} intro={t('medicalIntro')} members={medical} />
+            <GroupedMembersSection title={t('medicalTitle')} intro={t('medicalIntro')} groups={medicalGroups} />
           </section>
 
           <section id="paramedical" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
-            <SectionGrid title={t('paramedicalTitle')} intro={t('paramedicalIntro')} members={paramedical} />
+            <GroupedMembersSection title={t('paramedicalTitle')} intro={t('paramedicalIntro')} groups={paramedicalGroups} />
           </section>
 
           <section id="administrative" className="scroll-mt-24 lg:scroll-mt-[12rem] mb-12">
