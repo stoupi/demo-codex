@@ -29,7 +29,7 @@ function SectionGrid({ title, intro, members }: { title: string; intro?: string;
                     title="LinkedIn"
                   >
                     <span
-                      className="h-5 w-5 bg-[#0A66C2]"
+                      className="h-10 w-10 bg-[#0A66C2]"
                       style={{
                         WebkitMaskImage: "url('/assets/linkedin-icon.svg')",
                         maskImage: "url('/assets/linkedin-icon.svg')",
@@ -201,10 +201,22 @@ export default async function TeamPage() {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-10">
-      <div className="sticky top-20 z-20 bg-white/90 backdrop-blur py-4 mb-6 text-[#184F88]">
-        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-[#0063AF]">{t('title')}</h1>
+    <>
+      <div className="sticky top-20 z-20">
+        <div className="relative h-48 md:h-72">
+          <img
+            src="/assets/larib/IMG_46822.JPG"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0F2C6B]/80" aria-hidden />
+          <div className="container mx-auto px-4 h-full flex items-end pb-6 relative">
+            <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white">{t('title')}</h1>
+          </div>
+        </div>
       </div>
+
+      <div className="container mx-auto px-4 py-10">
 
       <div className="team-layout grid grid-cols-1 lg:grid-cols-[18rem_1fr] gap-8">
         <aside className="sticky top-40 z-10 bg-white rounded-lg p-4 border h-max">
@@ -306,5 +318,6 @@ export default async function TeamPage() {
         `}
       </Script>
     </div>
+    </>
   )
 }
