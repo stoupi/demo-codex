@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { getHeroImageUrl } from '@/lib/services/settings';
 import { getSetting } from '@/lib/services/settings';
 import Image from 'next/image';
-import { Link } from '@/app/i18n/navigation';
+import { Link } from '@/navigation';
 import { Button } from '@/components/ui/button';
 
 type HeroProps = {

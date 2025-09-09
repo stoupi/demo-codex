@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { Card, CardContent } from '@/components/ui/card'
-import { Link } from '@/app/i18n/navigation'
+import { Link } from '@/navigation'
 import type { TeamGroup, TeamMember } from '@/types/team'
 import Script from 'next/script'
 

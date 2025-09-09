@@ -13,7 +13,7 @@ import { Label } from '@/components/ui/label';
 import { AlertCircle, LogIn, Eye, EyeOff } from 'lucide-react';
 import { loginAction } from '../actions';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/navigation';
 import { GoogleButton } from '../../components/auth/google-button';
 import { authClient } from '@/lib/auth-client';
 
@@ -56,8 +56,8 @@ export function LoginForm({ showSignupLink = true }: LoginFormProps) {
 			if (data?.success) {
 				// Refetch session to update client-side state
 				refetchSession?.();
-				router.refresh();
-				router.push(`/${locale}/dashboard`);
+      router.refresh();
+      router.push('/dashboard');
 			}
 		},
 	});
