@@ -203,14 +203,8 @@ export default async function TeamPage() {
   return (
     <>
       <div className="sticky top-20 z-20">
-        <div className="relative h-48 md:h-72">
-          <img
-            src="/assets/larib/IMG_4682.JPG"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#0F2C6B]/80" aria-hidden />
-          <div className="container mx-auto px-4 h-full flex items-end pb-6 relative">
+        <div className="bg-[#0F2C6B] h-36 md:h-56">
+          <div className="container mx-auto px-4 h-full flex items-end pb-6">
             <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white">{t('title')}</h1>
           </div>
         </div>
@@ -219,7 +213,7 @@ export default async function TeamPage() {
       <div className="container mx-auto px-4 py-10">
 
         <div className="team-layout grid grid-cols-1 lg:grid-cols-[18rem_1fr] gap-8">
-          <aside className="sticky top-[25rem] md:top-[25rem] z-2 bg-white rounded-lg p-4 border h-max">
+          <aside className="sticky top-[19rem] md:top-[19rem] z-2 bg-white rounded-lg p-4 border h-max">
             <nav className="section-nav flex flex-col gap-2">
               <a href="#medical" className="px-3 py-2 rounded-md text-[#184F88] font-medium hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white transition-colors">{t('medicalTitle')}</a>
               <a href="#paramedical" className="px-3 py-2 rounded-md text-[#184F88] font-medium hover:bg-[#0F2C6B] hover:text-white focus:bg-[#0F2C6B] focus:text-white transition-colors">{t('paramedicalTitle')}</a>
