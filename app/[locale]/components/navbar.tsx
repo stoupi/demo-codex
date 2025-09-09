@@ -1,6 +1,6 @@
 'use client';
 
-import { Link, useRouter, usePathname } from '@/navigation';
+import { Link, useRouter, usePathname } from '@/app/i18n/navigation';
 import {
 	DropdownMenu,
 	DropdownMenuContent,

@@ -13,7 +13,7 @@ import { Label } from '@/components/ui/label';
 import { AlertCircle, UserPlus, Eye, EyeOff } from 'lucide-react';
 import { signupAction } from '../actions';
 import Link from 'next/link';
-import { useRouter } from '@/navigation';
+import { useRouter } from '@/app/i18n/navigation';
 import { GoogleButton } from '../../components/auth/google-button';
 import { authClient } from '@/lib/auth-client';
 
