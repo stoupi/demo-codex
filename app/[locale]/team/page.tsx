@@ -18,6 +18,34 @@ function SectionGrid({ title, intro, members }: { title: string; intro?: string;
               {m.role || m.specialty ? (
                 <div className="text-[#184F88] mt-1">{m.role}{m.specialty ? ' – ' + m.specialty : ''}</div>
               ) : null}
+              {m.linkedinUrl ? (
+                <div className="mt-3 flex justify-center">
+                  <a
+                    href={m.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20"
+                    aria-label="LinkedIn"
+                    title="LinkedIn"
+                  >
+                    <span
+                      className="h-5 w-5 bg-[#0A66C2]"
+                      style={{
+                        WebkitMaskImage: "url('/assets/linkedin-icon.svg')",
+                        maskImage: "url('/assets/linkedin-icon.svg')",
+                        WebkitMaskRepeat: 'no-repeat',
+                        maskRepeat: 'no-repeat',
+                        WebkitMaskPosition: 'center',
+                        maskPosition: 'center',
+                        WebkitMaskSize: 'contain',
+                        maskSize: 'contain',
+                      }}
+                      aria-hidden
+                    />
+                    <span className="sr-only">LinkedIn</span>
+                  </a>
+                </div>
+              ) : null}
             </CardContent>
           </Card>
         ))}
@@ -42,6 +70,34 @@ function GroupedMembersSection({ title, intro, groups }: { title: string; intro?
                   <div className="text-[#0F2C6B] text-lg font-bold">{m.name}</div>
                   {m.role || m.specialty ? (
                     <div className="text-[#184F88] mt-1">{m.role}{m.specialty ? ' – ' + m.specialty : ''}</div>
+                  ) : null}
+                  {m.linkedinUrl ? (
+                    <div className="mt-3 flex justify-center">
+                      <a
+                        href={m.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                      >
+                        <span
+                          className="h-5 w-5 bg-[#0A66C2]"
+                          style={{
+                            WebkitMaskImage: "url('/assets/linkedin-icon.svg')",
+                            maskImage: "url('/assets/linkedin-icon.svg')",
+                            WebkitMaskRepeat: 'no-repeat',
+                            maskRepeat: 'no-repeat',
+                            WebkitMaskPosition: 'center',
+                            maskPosition: 'center',
+                            WebkitMaskSize: 'contain',
+                            maskSize: 'contain',
+                          }}
+                          aria-hidden
+                        />
+                        <span className="sr-only">LinkedIn</span>
+                      </a>
+                    </div>
                   ) : null}
                 </CardContent>
               </Card>
@@ -70,7 +126,7 @@ export default async function TeamPage() {
     {
       title: t('medicalGroups.hospitalUniversity'),
       members: [
-        { id: 'theo-pezel', name: 'Dr Théo PEZEL', role: '', section: 'medical' },
+        { id: 'theo-pezel', name: 'Dr Théo PEZEL', role: '', section: 'medical', linkedinUrl: 'https://www.linkedin.com/in/théo-pezel-00628114a' },
       ],
     },
     {

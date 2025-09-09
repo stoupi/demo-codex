@@ -11,6 +11,7 @@ export type TeamMember = {
   role: string;
   specialty?: string;
   section: TeamSection;
+  linkedinUrl?: string;
 };
 
 export type TeamGroup = {
