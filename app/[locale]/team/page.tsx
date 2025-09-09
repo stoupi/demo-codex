@@ -24,7 +24,7 @@ function SectionGrid({ title, intro, members }: { title: string; intro?: string;
                     href={m.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20"
+                    className="inline-flex items-center justify-center"
                     aria-label="LinkedIn"
                     title="LinkedIn"
                   >
@@ -77,12 +77,12 @@ function GroupedMembersSection({ title, intro, groups }: { title: string; intro?
                         href={m.linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20"
+                        className="inline-flex items-center justify-center"
                         aria-label="LinkedIn"
                         title="LinkedIn"
                       >
                         <span
-                          className="h-5 w-5 bg-[#0A66C2]"
+                          className="h-10 w-10 bg-[#0A66C2]"
                           style={{
                             WebkitMaskImage: "url('/assets/linkedin-icon.svg')",
                             maskImage: "url('/assets/linkedin-icon.svg')",
